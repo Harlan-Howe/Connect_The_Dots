@@ -233,8 +233,12 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
                 CtdPoint pt;
                 if (parts.length == 3)
                     pt = new CtdPoint(Integer.parseInt(parts[0]),
-                                           Integer.parseInt(parts[1]),
-                                            Double.parseDouble(parts[2]));
+                                        Integer.parseInt(parts[1]),
+                                        Double.parseDouble(parts[2]));
+                else if (parts.length == 2)
+                    pt = new CtdPoint(Integer.parseInt(parts[0]),
+                                        Integer.parseInt(parts[1]),
+                                        Math.PI/4);
                 else throw new IOException("Wrong number of numbers in this line: "+latestLine);
                 //TODO #1: You've just created a new dot, called "pt." Time
                 // to put it in the myDots list. (Hint: This is one line.)
@@ -286,7 +290,7 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
             PrintWriter fout = new PrintWriter(filename);
             //TODO - #5: for each dot in myDots, print its x, y and angle,
             // separated by tabs ("\t"). Instead of using "System.out," however,
-            // use "fout" instead.
+            // use "fout" instead to send it to the file. e.g., "fout("Hello, World!);"
 
             fout.close();
         }
