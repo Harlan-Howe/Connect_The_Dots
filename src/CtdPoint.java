@@ -126,6 +126,6 @@ public class CtdPoint
         return "CtdPoint{" +
                 "(" + x +
                 ", " + y +
-                ") @"+String.format("%3.2f",angle)+"radians }";
+                ") @ "+String.format("%3.2f",angle)+" radians}";
     }
 }
