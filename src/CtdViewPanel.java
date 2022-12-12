@@ -193,9 +193,10 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
         // TODO - #4: Loop through all the dots in myDots, except the last one.
         //    Consider you are on dot at location A, and we also are interested in the next dot, at location B = A+1.
         //    For each dotA -> dotB, if dotB's X value is non-negative, you will draw a line from dotA -> dotB.
+        //    [format: g.drawLine(x1, y1, x2, y2);]
         //    The color of this line is determined by the "conflicts" list generated in the previous line.
         //    If the value of "conflicts" at A is true, then the line from dotA -> dotB should be red; otherwise draw
-        //         it in black.
+        //       it in black. [format: g.setColor(Color.RED); or g.setColor(Color.BLACK); <-- before you draw the line.]
 
 
         // ---------------------------
