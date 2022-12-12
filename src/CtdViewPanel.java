@@ -486,6 +486,7 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
         if (MODE_EDIT == mode && selectedIndex>=0)
         {
             // TODO - #? get rid of the selected dot.
+
             setSelectedIndex(-1);
             repaint();
         }
@@ -505,7 +506,7 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
         if (MODE_EDIT == mode && selectedIndex >= 0)
         {
             CtdPoint pt;
-            // TODO: #? - if the selectedIndex refers to the last dot,
+            // TODO: #? - if the selectedIndex refers to the last dot in our list,
             //              make "pt" become a new dot near it.
             //            otherwise, make "pt" be a new dot halfway between
             //              this dot and the next one.
