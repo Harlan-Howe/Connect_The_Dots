@@ -27,6 +27,64 @@ public class CtdPoint
         return x;
     }
 
+    //-------------------------------------
+    // TODO - #0 (OPTIONAL) Consider adding some/all of the following methods. They're optional, but might be handy.
+
+//    /**
+//     * @return the absolute value of x.
+//     */
+//    public int getAbsX()
+//    {
+//        return 0;
+//    }
+//
+//    /**
+//     * determines whether this dot should be drawn hollow or solid, based on sign of X.
+//     * @return whether this dot should be drawn hollow.
+//     */
+//    public boolean isAHollowDot()
+//    {
+//        return false;
+//    }
+//
+//    /**
+//     * determines whether this dot should be drawn hollow or solid, based on sign of X.
+//     * @return whether this dot should be drawn solid.
+//     */
+//    public boolean isASolidDot()
+//    {
+//        return true;
+//    }
+//
+//    /**
+//     * alter the value of X so that this dot will be drawn solid.
+//     * postcondition: absolute value of X is unchanged.
+//     */
+//    public void setIsSolid()
+//    {
+//
+//    }
+//
+//    /**
+//     * alter the value of X so that this dot will be drawn hollow
+//     * postcondition: absolut value of X is unchanged.
+//     */
+//    public void setIsHollow()
+//    {
+//
+//    }
+//
+//    /**
+//     * potentially alter the value of X so that this dot will be drawn solid or hollow.
+//     * @param b - true if this should be solid, false if it should be hollow.
+//     */
+//    public void setIsSolid(boolean b)
+//    {
+//
+//    }
+    //-------------------------------------
+
+
     public void setX(int x)
     {
         this.x = x;
