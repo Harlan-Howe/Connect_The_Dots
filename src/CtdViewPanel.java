@@ -153,9 +153,11 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
         g.setFont(dotFont);
         // TODO #3 - loop through all the dots in myDots. For each
         //  dot...
-        //      if this is the first dot or if its X is negative, draw a hollow dot of DOT_RADIUS, centered on its (-X,Y).
-        //      if its X is non-negative, draw a solid dot of DOT_RADIUS, centered on its (X,Y).
-        //      Also, for each dot, drawString for (i+1) so that it is NUMBER_RADIUS away from the (±X,Y),
+        //      if this is the first dot or if its X is negative, draw a _hollow_ dot of DOT_RADIUS, centered on its
+        //      (|X|,Y). [format: g.drawOval(left, top, width, height);]
+        //      if its X is non-negative, draw a _solid_ dot of DOT_RADIUS, centered on its (|X|,Y). [format:
+        //      g.fillOval(left, top, width, height);]
+        //      Also, for each dot, drawString to display (i+1) so that it is NUMBER_RADIUS away from the (|X|,Y),
         //         at this dot's radius. Here's (partial) code for this part:
         //double angle = dot.getAngle();
         //g.drawString(""+(<the number to draw>),
@@ -165,7 +167,7 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
 
         if (tempDot != null)
         {
-            // TODO - #3.5 The "tempDot" is the dot that is in the process of being added.
+            // TODO - #3.5 The CTDPoint variable, "tempDot," is the dot that is in the process of being added.
             //  (A non-null tempDot means the user is in "MODE_ADD" and dragging the dot around.)
             //  Draw this one, too, following the rules for to do #3.
 
