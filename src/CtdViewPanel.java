@@ -290,7 +290,7 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
             PrintWriter fout = new PrintWriter(filename);
             //TODO - #5: for each dot in myDots, print its x, y and angle,
             // separated by tabs ("\t"). Instead of using "System.out," however,
-            // use "fout" instead to send it to the file. e.g., "fout("Hello, World!);"
+            // use "fout" instead to send it to the file. e.g., "fout.println("Hello, World!);"
 
             fout.close();
         }
