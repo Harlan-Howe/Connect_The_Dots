@@ -32,6 +32,8 @@ public class CtdPoint
 
 //    /**
 //     * @return the absolute value of x.
+//     * NOTE: this should NOT change the value stored in x. 
+//     *       For example, if x = -5, then you should return +5, but x should still be -5.
 //     */
 //    public int getAbsX()
 //    {
