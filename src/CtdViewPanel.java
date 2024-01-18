@@ -56,6 +56,16 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
         myParent = p;
     }
 
+    /**
+     * adds the given point to the end of our list of points.
+     * @param pt - the point to add
+     */
+    public void addPointToList(CtdPoint pt)
+    {
+        //TODO #1: You've just created a new dot, called "pt." Time
+        // to put it in the myDots list. (Hint: This is one line.)
+    }
+
     @Override
     public String toString()
     {
@@ -91,23 +101,7 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
 
     }
 
-    /**
-     * decrements "selectedIndex" and repaints. You should probably put some safeties on this to avoid crashes.
-     * */
-    public void selectPreviousDot()
-    {
-        //TODO #? - you write this. Hint: make use of setSelectedIndex().
-        repaint();
-    }
 
-    /**
-     * increments "selectedIndex" and repaints. You should probably put some safeties on this to avoid crashes.
-     */
-    public void selectNextDot()
-    {
-        //TODO #? - you write this. Hint: make use of setSelectedIndex().
-        repaint();
-    }
 // ----------------------------------  Graphics functions
 
     /**
@@ -143,11 +137,9 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
     {
         if (MODE_EDIT == mode && -1 != selectedIndex && myDots.size()>selectedIndex)
         {
-            g.setColor(Color.green);
-            // TODO - #? draw a highlight circle around the dot at "selectedIndex" in myDots.
-
+           drawSelectionOutline(g);  // draw a green outline around the dot the user has selected. There is a to-do in
+                                     // this method you'll need to write to make this work.
         }
-
 
         g.setColor(Color.black);
         g.setFont(dotFont);
@@ -240,8 +232,7 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
                                         Integer.parseInt(parts[1]),
                                         Math.PI/4);
                 else throw new IOException("Wrong number of numbers in this line: "+latestLine);
-                //TODO #1: You've just created a new dot, called "pt." Time
-                // to put it in the myDots list. (Hint: This is one line.)
+                addPointToList(pt); // created in TO-DO #1
             }
             reader.close();
         }
@@ -536,7 +527,35 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
         requestFocus();
     }
 
+    /**
+     * decrements "selectedIndex" and repaints. You should probably put some safeties on this to avoid crashes.
+     * */
+    public void selectPreviousDot()
+    {
+        //TODO #? - you write this. Hint: make use of setSelectedIndex().
+        repaint();
+    }
 
+    /**
+     * increments "selectedIndex" and repaints. You should probably put some safeties on this to avoid crashes.
+     */
+    public void selectNextDot()
+    {
+        //TODO #? - you write this. Hint: make use of setSelectedIndex().
+        repaint();
+    }
+
+    /**
+     * draws a green circle around the point on the list at "selectedIndex" into the Graphics object, g.
+     * @param g - the Graphics object in which to draw the circle.
+     */
+    public void drawSelectionOutline(Graphics g)
+    {
+        g.setColor(Color.green);
+        // TODO - #? draw a highlight circle around the dot at "selectedIndex" in myDots. Note "selectedIndex" and
+        //  "myDots" are member variables.
+
+    }
 // ----------------------------------- End GUI responses
 // ----------------------------------- Calculations about points, segments
 
