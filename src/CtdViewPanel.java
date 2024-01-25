@@ -408,6 +408,7 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
         {
             myParent.angleHasChangedInPanel(defaultAngle);
             myParent.setPointIsSelected(false);
+            myParent.setRemoveDotButtonEnabled(!myDots.isEmpty());
         }
         if (MODE_EDIT == mode && MODE_ADD == this.mode)
         {
@@ -821,6 +822,7 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
             else
                 myDots.add(new CtdPoint(-e.getX(), e.getY(), defaultAngle));
             repaint();
+            myParent.setRemoveDotButtonEnabled(true);
         }
         tempDot = null;
         repaint();

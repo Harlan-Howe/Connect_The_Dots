@@ -252,4 +252,9 @@ public class CtdFrame extends JFrame implements ActionListener, ChangeListener
         }
     }
 
+    public void setRemoveDotButtonEnabled(boolean b)
+    {
+        removeDotButton.setEnabled(b);
+    }
+
 }
