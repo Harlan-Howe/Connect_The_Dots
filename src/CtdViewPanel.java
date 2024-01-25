@@ -528,6 +528,18 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
     }
 
     /**
+     * draws a green circle around the point on the list at "selectedIndex" into the Graphics object, g.
+     * @param g - the Graphics object in which to draw the circle.
+     */
+    public void drawSelectionOutline(Graphics g)
+    {
+        g.setColor(Color.green);
+        // TODO - #? draw a highlight circle around the dot at "selectedIndex" in myDots. Note "selectedIndex" and
+        //  "myDots" are member variables.
+
+    }
+
+    /**
      * decrements "selectedIndex" and repaints. You should probably put some safeties on this to avoid crashes.
      * */
     public void selectPreviousDot()
@@ -545,17 +557,7 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
         repaint();
     }
 
-    /**
-     * draws a green circle around the point on the list at "selectedIndex" into the Graphics object, g.
-     * @param g - the Graphics object in which to draw the circle.
-     */
-    public void drawSelectionOutline(Graphics g)
-    {
-        g.setColor(Color.green);
-        // TODO - #? draw a highlight circle around the dot at "selectedIndex" in myDots. Note "selectedIndex" and
-        //  "myDots" are member variables.
 
-    }
 // ----------------------------------- End GUI responses
 // ----------------------------------- Calculations about points, segments
 
