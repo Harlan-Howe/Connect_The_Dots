@@ -806,6 +806,7 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
 
         }
         repaint();
+        requestFocus();
     }
     /**
      * Invoked when a mouse button has been released on a component.
@@ -924,7 +925,14 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
     public void keyPressed(KeyEvent e)
     {
         if (MODE_ADD == mode || selectedIndex <0)
+        {
+            if (tempDot != null && e.getKeyCode() == KeyEvent.VK_SHIFT)
+            {
+                tempDot.setX(-1 * Math.abs(tempDot.getX()));
+                repaint();
+            }
             return;
+        }
         if (e.getKeyCode() == KeyEvent.VK_UP)
         {
             // TODO #? - move the selected dot up one pixel.
@@ -965,6 +973,12 @@ public class CtdViewPanel extends JPanel implements MouseListener, MouseMotionLi
     @Override
     public void keyReleased(KeyEvent e)
     {
-
+        {
+            if (tempDot != null && e.getKeyCode() == KeyEvent.VK_SHIFT)
+            {
+                tempDot.setX(Math.abs(tempDot.getX()));
+                repaint();
+            }
+        }
     }
 }
